@@ -1,11 +1,11 @@
 import 'dart:async';
-import 'package:covid_luciana/first_screen.dart';
+import 'package:covid_luciana/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 void main() {
   runApp(MaterialApp(
-    title: "Contador",
+    title: "APP COVID",
     home: MyHomePage(),
 
     debugShowCheckedModeBanner: false,
@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     Timer(
       Duration(seconds: 2),
-        () => Navigator.push(context, MaterialPageRoute(builder: (context)=> FirstScreen())));
+        () => Navigator.push(context, MaterialPageRoute(builder: (context)=> Home())));
    }
 
   @override
