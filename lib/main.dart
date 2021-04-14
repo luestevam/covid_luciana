@@ -1,18 +1,28 @@
 import 'dart:async';
-import 'package:covid_luciana/home.dart';
+import 'package:covid_luciana/screens/countries_details.dart';
+import 'package:covid_luciana/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+import 'dados/countries.dart';
 
 void main() {
   runApp(MaterialApp(
     title: "APP COVID",
-    home: MyHomePage(),
+    theme: ThemeData(
+         primarySwatch: Colors.blue,
+        primaryColor: Color.fromARGB(255, 4, 126, 141)
+    ),
 
+
+    home: MyHomePage(),
     debugShowCheckedModeBanner: false,
   ));
 }
 
 class MyHomePage extends StatefulWidget {
+
+
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -26,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     Timer(
       Duration(seconds: 2),
-        () => Navigator.push(context, MaterialPageRoute(builder: (context)=> Home())));
+        () => Navigator.push(context, MaterialPageRoute(builder: (context)=> CountriesDetails())));
    }
 
   @override
@@ -41,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
           fit: BoxFit.cover),
 
 
-          SpinKitRipple(color: Colors.red),
+          SpinKitRipple(color: Colors.transparent),
         ],
       ),
     );

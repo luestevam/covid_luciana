@@ -1,5 +1,6 @@
+import 'package:covid_luciana/dados/continents.dart';
 import 'package:flutter/material.dart';
-import 'continents.dart';
+import 'package:covid_luciana/dados/countries.dart';
 import 'package:async/async.dart';
 import 'package:http/http.dart' as http;
 
@@ -36,8 +37,8 @@ class Home extends StatelessWidget {
                 ),
               );
             } else {
-              return Container(
 
+              return Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
@@ -47,26 +48,24 @@ class Home extends StatelessWidget {
                         itemCount: snapshot.data.length,
                         itemBuilder: (context, index) {
                           Continentes data = snapshot.data[index];
-
                           return ListTile(
-                            title: Text(
-                              data.continent,
-                              style: TextStyle(
-                                  fontSize: 19.0, fontWeight: FontWeight.bold),),
-                              subtitle: Container(
-                              child: Row(
-                                children:<Widget> [
-                                  Text(data.deaths.toString(),
-                                    style: TextStyle(
-                                    color: Colors.blueAccent,
-                                    )
-                                    )
-                                ],
+                              title: Text(
+                                data.continent,
+                                style: TextStyle(
+                                    fontSize: 19.0,
+                                    fontWeight: FontWeight.bold),
                               ),
-                                
-                              )
-
-                          );
+                              subtitle: Container(
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(data.cases.toString(), //colocar número de paises
+                                        style: TextStyle(
+                                          color: Colors.blueAccent,
+                                        )
+                                    )
+                                  ],
+                                ),
+                              ));
                         })
                   ],
                 ),
